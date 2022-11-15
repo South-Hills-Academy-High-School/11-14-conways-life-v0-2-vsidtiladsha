@@ -7,6 +7,9 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     cursorY += -10
     drawGrid()
 })
+function copyButtom () {
+    return grid[11]
+}
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     grid[cursorGridRow][cursorGridCol] = grid[cursorGridRow][cursorGridCol] * -1 + 1
     drawGrid()
@@ -16,6 +19,9 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     cursorX += -10
     drawGrid()
 })
+function copyRight (whichRow: number) {
+    return grid[whichRow][15]
+}
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     cursorGridCol += 1
     cursorX += 10
@@ -51,12 +57,27 @@ function drawGrid () {
     }
     cursor.left = cursorX
     cursor.top = cursorY
+    cursor.top = cursorY
+    cursor.top = cursorY
 }
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     cursorGridRow += 1
     cursorY += 10
     drawGrid()
 })
+function copyLeft (whichRow: number) {
+    return grid[whichRow][0]
+}
+function countneighbors () {
+    neighborscountsprite += grid[0 + 0][0]
+}
+function countneighborswraptop () {
+	
+}
+function copyTop () {
+    return grid[0]
+}
+let neighborscountsprite = 0
 let gridSprite: Sprite = null
 let currentX = 0
 let currentY = 0
